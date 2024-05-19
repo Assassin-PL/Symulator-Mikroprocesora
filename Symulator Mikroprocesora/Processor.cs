@@ -163,4 +163,11 @@ public class Processor
         }
         return result;
     }
+    public void ClearProgram()
+    {
+        program.Clear();
+        instructionPointer = 0;
+        OnRegisterUpdate?.Invoke(GetRegisterStates());
+        OnInstructionExecuted?.Invoke("Program cleared.");
+    }
 }
